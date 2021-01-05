@@ -1,4 +1,5 @@
 import './styles.css';
+import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/core/dist/BrightTheme.css';
 
 import { debounce } from 'debounce';
@@ -30,9 +31,7 @@ query.addEventListener('input', debounce(onSearch, 500));
 
 function displayResult(data, place) {
   if (data.length === 1) {
-    const itemqq = data.map(el => el);
-
-    const item = temp(data.map(el => el));
+    const item = temp(data);
     return place.insertAdjacentHTML('beforeend', item);
   }
   if (data.length <= 10) {
